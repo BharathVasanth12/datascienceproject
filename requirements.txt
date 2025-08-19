@@ -1,6 +1,6 @@
 pandas
 numpy
-mlflow
+mlflow<3
 notebook
 scikit-learn
 matplotlib
