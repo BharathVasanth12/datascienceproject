@@ -2,14 +2,14 @@ import os
 import yaml
 import json
 import joblib
-from ensure import ensure_annotation
+from ensure import ensure_annotations
 from box import ConfigBox
 from pathlib import Path
 from typing import Any
 from box.exceptions import BoxValueError
 from src.datascience import logger
 
-@ensure_annotation
+@ensure_annotations
 def read_yaml(path_to_yaml: Path) -> ConfigBox:
     """
         reads yaml file and returns ConfigBox
@@ -34,8 +34,8 @@ def read_yaml(path_to_yaml: Path) -> ConfigBox:
     except Exception as e:
         raise e
 
-@ensure_annotation
-def create_directory(path_to_directories: list, verbose=True) -> None:
+@ensure_annotations
+def create_directories(path_to_directories: list, verbose=True):
     """
         creates list of directory if it doesn't exist
 
@@ -53,13 +53,13 @@ def create_directory(path_to_directories: list, verbose=True) -> None:
         if verbose:
             logger.info(f"created directory: {path} successfully")
 
-@ensure_annotation
+@ensure_annotations
 def save_json(path: Path, data: dict) -> None:
     """
         saves json file
         Args:
-            path (Path: path to json file
-            data (dict: data to save
+            path (Path): path to json file
+            data (dict): data to save
 
         Returns:
             None
@@ -68,7 +68,7 @@ def save_json(path: Path, data: dict) -> None:
         json.dump(data, json_file, indent=4)
         logger.info(f"saved json file: {path} successfully")
 
-@ensure_annotation
+@ensure_annotations
 def load_json(path: Path) -> ConfigBox:
     """
         loads json file
@@ -83,7 +83,7 @@ def load_json(path: Path) -> ConfigBox:
         logger.info(f"loaded json file: {path} successfully")
         return ConfigBox(content)
 
-@ensure_annotation
+@ensure_annotations
 def save_bin(data: Any,  path: Path) -> None:
     """
         saves binary file
@@ -97,7 +97,7 @@ def save_bin(data: Any,  path: Path) -> None:
     joblib.dump(value=data, filename=path)
     logger.info(f"saved binary file: {path} successfully")
 
-@ensure_annotation
+@ensure_annotations
 def load_bin(path: Path) -> Any:
     """
         loads binary file
