@@ -22,6 +22,7 @@ list_of_files = [
     "params.yaml",
     "schema.yaml",
     "main.py",
+    "app.py",
     "Dockerfile",
     "setup.py",
     "research/research.ipynb",
@@ -29,12 +30,8 @@ list_of_files = [
     ]
 
 for filepath in list_of_files:
-    print(f"1.filepath:{filepath}")
     filepath = Path(filepath)
-    print(f"2.filepath:{filepath}")
     filedir, filename = os.path.split(filepath)
-    print(f"filedir:{filedir}")
-    print(f"filename:{filename}")
 
     if filedir != "":
         os.makedirs(filedir, exist_ok=True)
