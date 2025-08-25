@@ -13,3 +13,5 @@ types-pyyaml
 Flask
 Flask-Cors
 ipykernel
+
+-e .

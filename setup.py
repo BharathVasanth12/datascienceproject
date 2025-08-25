@@ -9,7 +9,7 @@ from setuptools import find_packages, setup
 from typing import List
 
 
-def get_requirements() -> List[str]:
+def get_requirements(   ) -> List[str]:
     """
     Thiss function will return list of requirements
 
